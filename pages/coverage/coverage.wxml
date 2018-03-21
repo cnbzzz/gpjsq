@@ -1,0 +1,68 @@
+<view class="weui-cells__title">盈亏</view>
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">持仓价</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" type="digit" placeholder="例如：10.85" bindinput="coverageInputChange" data-src="coverage.holdPrice"  value="{{coverage.holdPrice}}"/>
+    </view>
+  </view>
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">持仓股数</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" type="number" placeholder="例如：3000" bindinput="valChange" data-src="coverage.holdNum" value="{{coverage.holdNum}}"/>
+    </view>
+  </view>
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">现价/加仓价</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" type="digit" placeholder="例如：10.85" bindinput="coverageInputChange" data-src="coverage.newPrice" value="{{coverage.newPrice}}" />
+    </view>
+  </view>
+<view class="weui-cell" style="color:#999;font-size:14px">
+    <view class="weui-cell__bd">盈亏金额</view>
+    <view class="weui-cell__ft">涨跌幅</view>
+  </view>
+  <view class="weui-cell {{coverage.lossPrice >= 0 ? 'bz__upper' : 'bz__down'}}">
+    <view class="weui-cell__bd">
+      {{coverage.lossPrice >= 0 ? '+' + coverage.lossPrice : coverage.lossPrice}}
+    </view>
+    <view class="weui-cell__ft">
+      {{coverage.lossPrice >= 0 ? '+' + coverage.lossPercent : coverage.lossPercent}}%
+    </view>
+  </view>
+    <view class="weui-cell" style="color:#999;font-size:14px">
+    <view class="weui-cell__bd">加仓后成本价</view>
+    <view class="weui-cell__ft">加仓后涨跌幅</view>
+  </view>
+  <view class="weui-cell {{coverage.lossPrice >= 0 ? 'bz__upper' : 'bz__down'}}">
+    <view class="weui-cell__bd">
+      {{coverage.addHoldPrice}}
+    </view>
+    <view class="weui-cell__ft">
+      {{coverage.lossPrice >= 0 ? '+' + coverage.addLossPercent : coverage.addLossPercent}}%
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      加仓需要资金
+    </view>
+    <view class="weui-cell__ft bz__upper">
+      <text selectable="{{true}}">{{coverage.addCostPrice}}</text>
+    </view>
+  </view>
+</view>
+
+<view class="weui-cells__title">滑动选择加仓数量</view>
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <slider show-value min="1000" max="100000" step="1000" activeColor="#d74d43" block-color="#d74d43" catchchanging='valChange' catchchange='valChange' data-src="coverage.addNum" value="{{coverage.addNum}}"/>
+    </view>
+  </view>
+</view>

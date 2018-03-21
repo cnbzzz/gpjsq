@@ -1,0 +1,49 @@
+<view class="weui-cells">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">收盘价</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" type="digit" placeholder="例如：10.85" bindinput="inputChange" value="{{stock.preClosePrice }}" />
+    </view>
+  </view>
+</view>
+
+<view class="weui-cells">
+  <view class="weui-cell weui-cells__title">
+    <view class="weui-cell__bd">板数</view>
+    <view class="weui-cell__bd">最新价</view>
+    <view class="weui-cell__ft">涨幅</view>
+  </view>
+  <view class="weui-cell bz__upper">
+    <view class="weui-cell__bd">{{stock.count}}板</view>
+    <view class="weui-cell__bd">{{stock.totalUpperPrice}}</view>
+    <view class="weui-cell__ft">+{{stock.totalUpperPercent}}%</view>
+  </view>
+  <view class="weui-cell bz__down">
+    <view class="weui-cell__bd">{{stock.count}}板</view>
+    <view class="weui-cell__bd">{{stock.totalDownPrice}}</view>
+    <view class="weui-cell__ft">{{stock.totalDownPercent}}%</view>
+  </view>
+</view>
+
+<view class="weui-cells">
+  <view class="weui-cell weui-cells__title">
+    <view class="weui-cell__bd">新股
+      <switch checked="{{stock.isNew}}" data-sh="isNew" bindchange="switchChange" color='#d74d43' />
+    </view>
+    <view class="weui-cell__ft">ST股
+      <switch checked="{{stock.isST}}" data-sh="isST" bindchange="switchChange" color='#1aad19' />
+    </view>
+  </view>
+</view>
+
+
+<view class="weui-cells__title">滑动选择涨/跌停数</view>
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <slider show-value value="{{stock.count}}" min="1" max="100" activeColor="#d74d43" block-color="#d74d43" catchchanging='sliderChanging' catchchange='sliderChanging' />
+    </view>
+  </view>
+</view>

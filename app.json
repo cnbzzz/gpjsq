@@ -1,0 +1,11 @@
+{
+  "pages":[
+    "pages/index/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#D74D43",
+    "navigationBarTitleText": "涨停计算器",
+    "navigationBarTextStyle":"white"
+  }
+}

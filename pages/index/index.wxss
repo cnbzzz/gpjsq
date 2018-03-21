@@ -1,0 +1,43 @@
+.weui-navbar__item.weui-bar__item_on {
+  color: #d74d43;
+}
+
+.weui-navbar__slider {
+  background-color: #d74d43;
+}
+
+.bz__xs-image {
+  width: 16px;
+  height: 16px;
+  vertical-align:middle; 
+  padding: 5px;
+}
+
+.bz__fixed-right {
+  position: fixed; 
+  left:670rpx;
+  top: 50px;
+  /* transform: translateY(-23%);  */
+  z-index: 999;
+}
+
+.bz__sm-image {
+  width: 32px;
+  height: 32px;
+  vertical-align:middle; 
+  padding: 5px;
+}
+
+.bz__padding-top {
+  padding-top: 15px;
+}
+
+.bz__upper view, .bz__upper text {
+  font-weight: bold;
+  color: #d74d43; 
+}
+
+.bz__down view, .bz__down text {
+  font-weight: bold;
+  color: #1aad19;
+}
